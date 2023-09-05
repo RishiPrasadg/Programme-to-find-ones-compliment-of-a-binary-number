@@ -1,0 +1,46 @@
+//Write a programme to check whether a number entered  by the user is binary or not.
+#include<iostream>
+#include<string>
+using namespace std;
+class binary{
+string s;
+public:
+void get_input(void){
+    cout<<"Enter the number";
+    cin>>s;
+}
+void check_binary(void){
+    for(int i=0; i < s.length();i++){
+        if(s.at(i)!='0' && s.at(i)!='1'){
+            cout<<"Invalid binary format"<<endl;
+            exit(0);
+        }
+    }
+}
+void ones_complement(void){
+    cout<<"The ones complement for the entered number is";
+    for(int i=0; i < s.length();i++){
+        if(s.at(i)=='1'){
+            s.at(i)='0';
+        }
+        else{
+            s.at(i)='1';
+        }
+    }
+}
+void display_ones_complement(void){
+    for(int i=0;i<s.length();i++){
+        cout<<s.at(i);
+    }
+    cout<<endl;
+}
+
+};
+int main(){
+    binary n1;
+    n1.get_input();
+    n1.check_binary();
+    n1.ones_complement();
+    n1.display_ones_complement();
+    return 0;
+}
